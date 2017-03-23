@@ -1,10 +1,11 @@
 # tts_basics_for_revealjs
-##What does it do?
+
+## What does it do?
 Add text-to-speech to your reveal.js slideshow and have your slides read out loud with this plug-in.
 The plug-in works for current versions of Chrome, Firefox and Opera as tested on Windows OS.
 The plug-in adds some initialization code to use the "default" tts voice. You have the option to read the visible, and/or the hidden text of elements you can specify. The Reveal "slidechanged" and "fragmentshown" events trigger tts reading. The default setup will read the typical text that appears on slides except code segments. A delay can be added to the slidechanged event to allow visual transitions to conclude before reading starts. The default 1 second works fine.
 
-##How do you include it into your Reavel.js Slideshow?
+## How do you include it into your Reavel.js Slideshow?
 The plug-in can be added in the same way as other reveal.js plug-ins inside the dependencies part of the script tag towards the end of the slideshow page's body tag as shown below. Note the location of the tts_min_reveal.js file in the plugin/tts_min directory. This code fragment is from the reveal_tts_demo.html:
 ```javascript
 <script>
