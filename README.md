@@ -37,7 +37,7 @@ The plug-in can be added in the same way as other reveal.js plug-ins inside the 
 
 			Reveal.addEventListener( 'ready', function( event ) {
 			//  Add this if you want to read the opening slide.
-			// event.currentSlide, event.indexh, event.indexv
+			//  Other eventlisteners defined in tts_min_reveal.js handle slidechanged and fragmentshown events
 				var thisSlide = Reveal.getCurrentSlide();
 				if (tts.On) {
 					// Read the innerText for the listed elements of current slide after waiting 1 second to allow transitions to conclude.
