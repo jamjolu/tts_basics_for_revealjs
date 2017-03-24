@@ -17,7 +17,7 @@ If you already have a reveal.js based slideshow with its directory structure and
 https://github.com/hakimel/reveal.js/ 
 or, clone or download this repository.
 
-The plug-in can be added in the same way as other reveal.js plug-ins inside the dependencies part of the script tag towards the end of the slideshow page's body tag as shown below. Note the location of the tts_min_reveal.js file in the plugin/tts_min directory. This code fragment is from the reveal_tts_demo.html:
+The plug-in can be added in the same way as other reveal.js plug-ins inside the dependencies part of the script tag towards the end of the slideshow page's body tag as shown below. Note the location of the tts_min_reveal.js file in the plugin/tts_min directory. This code fragment is from the index.html page on this repository:
 ```javascript
 <script>
 			// More info https://github.com/hakimel/reveal.js#configuration
