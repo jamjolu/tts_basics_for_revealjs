@@ -10,7 +10,7 @@ This plug-in, tts_min_reveal.js, provides text-to-speech to your reveal.js slide
 3. Use the "slide changed" event read the textContent of hidden elements like slide notes.
 
 The default setup will read the typical text that appears on slides, text in fragments and text in hidden notes. A delay added to the slidechanged event to allows visual transitions to conclude before reading starts. The default 1 second works fine.
-The file tts_min_reveal.js can be found in the plugins/tts_min directory on this site.
+The file, tts_min_reveal.js, can be found in the plugin/tts_min directory on this site.
 
 ## How do you include it into your Reveal.js Slideshow?
 If you already have a reveal.js based slideshow with its directory structure and resources, you just need to copy the tts_min_reveal.js into the plugin structure as shown below. If you do not have a reveal.js slideshow and directory structure clone or download it it from:
