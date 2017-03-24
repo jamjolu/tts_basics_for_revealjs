@@ -1,7 +1,7 @@
 # tts_basics_for_revealjs
 
 ## What does it do?
-This plug-in provides text-to-speech to your reveal.js slideshow so you can have your slides read out loud. The plug-in works for current versions of Chrome, Firefox and Opera as tested on Windows OS. The plug-in offers the following possibilities:
+This plug-in, tts_min_reveal.js, provides text-to-speech to your reveal.js slideshow so you can have your slides read out loud. The plug-in works for current versions of Chrome, Firefox and Opera as tested on Windows OS. The plug-in offers the following possibilities:
 
 1. Use the "slide changed" event to initiate reading the innerText of elements that you can specify on the current slide. This allows you to have  visible elements read outloud.
 
@@ -10,10 +10,12 @@ This plug-in provides text-to-speech to your reveal.js slideshow so you can have
 3. Use the "slide changed" event read the textContent of hidden elements like slide notes.
 
 The default setup will read the typical text that appears on slides, text in fragments and text in hidden notes. A delay added to the slidechanged event to allows visual transitions to conclude before reading starts. The default 1 second works fine.
+The file tts_min_reveal.js can be found in the plugins/tts_min directory on this site.
 
 ## How do you include it into your Reveal.js Slideshow?
 If you already have a reveal.js based slideshow with its directory structure and resources, you just need to copy the tts_min_reveal.js into the plugin structure as shown below. If you do not have a reveal.js slideshow and directory structure clone or download it it from:
 https://github.com/hakimel/reveal.js/ 
+or, clone or download this repository.
 
 The plug-in can be added in the same way as other reveal.js plug-ins inside the dependencies part of the script tag towards the end of the slideshow page's body tag as shown below. Note the location of the tts_min_reveal.js file in the plugin/tts_min directory. This code fragment is from the reveal_tts_demo.html:
 ```javascript
