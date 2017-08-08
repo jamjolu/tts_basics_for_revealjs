@@ -1,13 +1,13 @@
 # tts_basics_for_revealjs
 
 ## What does it do?
-This plug-in, tts_min_reveal.js, provides text-to-speech to your reveal.js slideshow so you can have your slides read out loud. The plug-in works for current versions of Chrome, Firefox and Opera as tested on Windows OS. The plug-in offers the following possibilities:
+This plug-in, tts_min_reveal.js, provides text-to-speech to your reveal.js slideshow so you can have your slides read out loud. The plug-in works for current versions of Chrome, Firefox, Microsoft Edge and Opera as tested on Windows OS. I have also tested the plug-in as working in Linux using Chrome, and using Firefox by fiddling with text-to-speech and accessiblity settings. I hope to gain a better understanding of the Linux accessibility/text-to-speech/os relationships so as to offer a more coherent guide to those who prefer  or depend on Linux. The plug-in offers the following possibilities:
 
 1. Use the "slide changed" event to initiate reading the innerText of elements that you can specify on the current slide. This allows you to have  visible elements read outloud.
 
 2. Use the "fragement shown" event to read the text content of the textContent of fragment elements as they appear.
 
-3. Use the "slide changed" event read the textContent of hidden elements like slide notes.
+ 3. Use the "slide changed" event read the textContent of hidden elements like slide notes.
 
 The default setup will read the typical text that appears on slides, text in fragments and text in hidden notes. A delay added to the slidechanged event to allows visual transitions to conclude before reading starts. The default 1 second works fine.
 The file, tts_min_reveal.js, can be found in the plugin/tts_min directory on this site.
@@ -28,7 +28,7 @@ The plug-in can be added in the same way as other reveal.js plug-ins inside the 
 				center: true,
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
+,				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -56,7 +56,7 @@ The plug-in can be added in the same way as other reveal.js plug-ins inside the 
 ## How does it work and how can you modify how it works?
 Note that after the dependencies part of Reveal.initialize, and just before the end of the script tag there is a ready event listener added so that the first slide can be read outloud. The ready event listener illustrates how to specify which text, and in what order text gets read on a slide. the function tts.ReadVisElmts takes a DOM element as its first argument, in this case the current slide object. The list of identifiers that follows define the order and type of elements from that slide that will be queried for text to read. Without making any changes to the tts_min_reveal.js file The text that appears in h1, h2, h3, p and li tags will be read in that order after a 1 second delay when a slides changes.  The second function tts.ReadAnyElmts works the same way but because it references the textContent attribute it can read the contents of any element including hidden ones. You can edit slidechanged event listener of tts_min_reveal.js to query your own ".readMe1", ".readMe2" classes, for example, to specify which text to read and in what order.
 
-The tts_min_reveal.js script is meant to be minimal. It only addresses the bare minimum of parameters needed for using the HTML 5 speech synthesis API (https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) to make slideshows talk using Firefox, Chrome and Opera. Because I chose to use the "default" voice, I am hoping that this script works in languages other than English without any tweeking. You will notice a difference between browsers as to which tts voice the browser uses. Firefox will attempt to use the tts voice installed locally, and Google will use its proprietary female voice. There are a few self explainatory parameters in the tts_min_reveal.js you can fiddle with at the beginning of the script as shown:
+The tts_min_reveal.js script is meant to be minimal. It only addresses the bare minimum of parameters needed for using the HTML 5 speech synthesis API (https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) to make slideshows talk using Firefox, Chrome, Edge and Opera. Because I chose to use the "default" voice, I am hoping that this script works in languages other than English without any tweeking. You will notice a difference between browsers as to which tts voice the browser uses. Firefox will attempt to use the tts voice installed locally, and Google will use its proprietary female voice. There are a few self explainatory parameters in the tts_min_reveal.js you can fiddle with at the beginning of the script as shown:
 ```javascript
 var ttsDvIndex = 0; //Used to help identify the default tts voice for Chrome or FF on the user's platform.
 var ttsDvRate = 0.85; // used to set speech rate between 0 and 2, 1 = 'normal'- there are other seemingly optional parameters like pitch, language, volume.
